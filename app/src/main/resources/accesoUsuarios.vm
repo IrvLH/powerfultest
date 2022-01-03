@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<!-- Latest compiled and minified JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <!-- Axios -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>   
+	<!-- Titulo de la página -->
+	<title>$pagina</title> 
+	<!-- Autor del proyecto -->
+    <meta name="author" content="Irving Lopez Hernandez">
+	<!-- Conjunto de caracteres -->
+    <meta charset="utf-8">
+	<!-- Descripción -->
+    <meta name="description" content=$descripcion>
+	<!-- URL -->
+    <meta name="url" content=$url>
+	<!-- Palabras clave -->
+    <meta name="keywords" content="tarea, lista, acceso">
+	<!-- Logotipo de la página -->  
+    <link rel="icon" href="assets/img/icon.png" type="image/png" sizes="16x16">
+</head>
+<body class="table bg-secondary">
+	<header >
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container-fluid">
+				<a class="mx-autofs-2 navbar-brand border border-3 rounded-pill text-center p-1 fw-bolder user-select-none p-3 text-light">Tareas</a>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link text-light active" aria-current="page" href="#">Registrarse</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link  text-light" href="#">Acceder</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link  text-light" href="#">Contacto</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- Descripción -->
+	<div class="row bg-secondary">
+		<p class="h5 text-center shadow-lg rounded text-light">
+			Accede a tu portal para guardar tus tareas.
+		</p>
+	</div>
+	<!-- Formulario de registro para maestros -->
+	<div class="container shadow-lg p-3 mb-5 rounded bg-secondary">
+		<div class="row p-3">
+			<h3 class="h3 text-center shadow-lg rounded text-light">¡Bienvenido! Accede aquí.</h3>
+		</div>
+		<form class="col-sm shadow-lg p-3 mb-5 rounded text-light">
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label class="form-row" for="nombres">Correo de acceso</label>
+					<input class="form-control row" type="email" id="correoAcc" name="correoAcc" required>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label class="form-row" for="correo">Contraseña</label>
+					<input class="form-control row" type="password" id="contra" name="contra" required>
+				</div>
+			</div>
+			
+			<div class="row p-3">
+				<button type="button" class="btn btn-lg col font-weight-bolder bg-primary text-light" id="acceder">Acceder</button>
+			</div>
+		</form>
+		<!-- Importar script-->
+		<script src="public/js/acceso.js"></script>
+	</div>
+	
+	<footer >
+		<p class="h5 text-center shadow-lg rounded text-light">
+			Sistemas web 2022 - Universidad Veracruzana 
+		</p>
+	</footer>
+</body>
