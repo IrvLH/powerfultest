@@ -1,8 +1,8 @@
-document.getElementById('crearexa').addEventListener('click', registroCuestionario);
-function registroCuestionario(e) {
-    var tit = document.getElementById('').value;
-    var desc = document.getElementById('').value;
-    var ima = document.getElementById('').value;
+document.getElementById('creartarea').addEventListener('click', registroTarea);
+function registroTarea(e) {
+    var tit = document.getElementById('titulo').value;
+    var desc = document.getElementById('descripcion').value;
+    var ima = document.getElementById('imagen').value;
     var id_u = document.getElementById('').value;
     
     axios.post('http://localhost:4567/registrarTarea', {

@@ -14,6 +14,7 @@ function crearUsuario(e) {
 
     .then(function (response) {
         alert("Creando cuenta...");
+        window.location.href = "/acceso";
     })
     .catch(function (error) {
         console.log(error);

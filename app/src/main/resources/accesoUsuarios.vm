@@ -10,19 +10,13 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>   
 	<!-- Titulo de la página -->
-	<title>$pagina</title> 
+	<title>Tareas - Acceso</title> 
 	<!-- Autor del proyecto -->
     <meta name="author" content="Irving Lopez Hernandez">
 	<!-- Conjunto de caracteres -->
     <meta charset="utf-8">
-	<!-- Descripción -->
-    <meta name="description" content=$descripcion>
-	<!-- URL -->
-    <meta name="url" content=$url>
 	<!-- Palabras clave -->
     <meta name="keywords" content="tarea, lista, acceso">
-	<!-- Logotipo de la página -->  
-    <link rel="icon" href="assets/img/icon.png" type="image/png" sizes="16x16">
 </head>
 <body class="table bg-secondary">
 	<header >
@@ -32,13 +26,7 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link text-light active" aria-current="page" href="#">Registrarse</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link  text-light" href="#">Acceder</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link  text-light" href="#">Contacto</a>
+							<a class="nav-link text-light active" aria-current="page" href="registrarUsuarioNuevo">Registrarse</a>
 						</li>
 					</ul>
 				</div>
@@ -75,7 +63,7 @@
 			</div>
 		</form>
 		<!-- Importar script-->
-		<script src="public/js/acceso.js"></script>
+		<script src="public/acceso.js"></script>
 	</div>
 	
 	<footer >

@@ -10,13 +10,13 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>   
 	<!-- Titulo de la página -->
-	<title>Tareas - Acceso</title> 
+	<title>Tareas - Registro</title> 
 	<!-- Autor del proyecto -->
     <meta name="author" content="Irving Lopez Hernandez">
 	<!-- Conjunto de caracteres -->
     <meta charset="utf-8">
 	<!-- Palabras clave -->
-    <meta name="keywords" content="tarea, lista, acceso">
+    <meta name="keywords" content="tareas, registro, usuario, extra">
 </head>
 <body class="table bg-secondary">
 	<header >
@@ -26,7 +26,7 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link text-light active" aria-current="page" href="registrarUsuarioNuevo">Registrarse</a>
+							<a class="nav-link  text-light" href="acceso">Acceder</a>
 						</li>
 					</ul>
 				</div>
@@ -36,35 +36,44 @@
 	<!-- Descripción -->
 	<div class="row bg-secondary">
 		<p class="h5 text-center shadow-lg rounded text-light">
-			Accede a tu portal para guardar tus tareas.
+			Registro de un nuevo usuario.
 		</p>
 	</div>
 	<!-- Formulario de registro para maestros -->
 	<div class="container shadow-lg p-3 mb-5 rounded bg-secondary">
 		<div class="row p-3">
-			<h3 class="h3 text-center shadow-lg rounded text-light">¡Bienvenido! Accede aquí.</h3>
+			<h3 class="h3 text-center shadow-lg rounded text-light">Ingrese sus datos</h3>
 		</div>
 		<form class="col-sm shadow-lg p-3 mb-5 rounded text-light">
-			<div class="row">
-				<div class="form-group col-md-6">
-					<label class="form-row" for="nombres">Correo de acceso</label>
-					<input class="form-control row" type="email" id="correoAcc" name="correoAcc" required>
+			<div class="form-row">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label class="form-row" for="nombres">Nombres:</label>
+						<input class="form-control row" type="text" id="nombres" name="nombres" required>
+					</div>
+					<div class="form-group col-md-6">
+						<label class="form-row" for="apellidos">Apellidos:</label>
+						<input class="form-control row" type="text" id="apellidos" name="apellidos" required>
+					</div>
+				</div>
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label class="form-row" for="correo">Correo:</label>
+						<input class="form-control row" type="email" id="correo" name="correo" required>
+					</div>
+					<div class="form-group col-md-6">
+						<label class="form-row" for="correoC">Clave:</label>
+						<input class="form-control row" type="password" id="clave" name="clave" required>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="form-group col-md-6">
-					<label class="form-row" for="correo">Contraseña</label>
-					<input class="form-control row" type="password" id="contra" name="contra" required>
-				</div>
-			</div>
-			
-			<div class="row p-3">
-				<button type="button" class="btn btn-lg col font-weight-bolder bg-primary text-light" id="acceder">Acceder</button>
-			</div>
+			<button type = "button" class="btn btn-lg col font-weight-bolder text-light" style = "background-color:#1E8449 ;" id="crear" >Crear cuenta</button>
+				
 		</form>
 		<!-- Importar script-->
-		<script src="public/acceso.js"></script>
+		<script src="public/registroUsuario.js"></script>
 	</div>
+	
 	
 	<footer >
 		<p class="h5 text-center shadow-lg rounded text-light">
