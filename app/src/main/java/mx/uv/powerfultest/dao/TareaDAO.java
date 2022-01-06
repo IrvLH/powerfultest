@@ -15,9 +15,16 @@ public class TareaDAO {
             String query =  " insert into "+TABLA+" (id_tareas, descripcion, imagen, id_usuario, titulo)"
                             + " values (?, ?, ?, ?, ?)";
             PreparedStatement preparedStmt = ConexionBD.conectar().prepareStatement(query);
+            Blob b = ConexionBD.conectar().createBlob();
+            if(tar.getImagen()!=null){
+                b.setBytes(1, tar.getImagen().getBytes());
+            }else{
+                b=null;
+            }
+
             preparedStmt.setInt(1, tar.getId());
             preparedStmt.setString(2, tar.getDescripcion());
-            preparedStmt.setBlob(3, tar.getImagen());
+            preparedStmt.setString(3, tar.getImagen());
             preparedStmt.setInt(4, tar.getId_usuario());
             preparedStmt.setString(5, tar.getTitulo());
             preparedStmt.execute();
@@ -43,11 +50,23 @@ public class TareaDAO {
                 System.out.println("no hay coincidencia con la base de datos");
                 return null;
             }else{
-                Tarea aux= new Tarea(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBlob(4), rs.getInt(5));
+                Blob b = rs.getBlob(3);
+                String arch64 = "Sin imagen";
+                if(b!=null){
+                    byte[] datos = b.getBytes(1, (int) b.length());
+                    arch64 = new String(datos);
+                }
+                Tarea aux= new Tarea(rs.getInt(1), rs.getString(2), arch64, rs.getInt(4), rs.getString(5));
                 tareas.add(aux);
                 System.out.println(aux.getTitulo());
                 while(rs.next()){
-                    aux= new Tarea(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getBlob(4), rs.getInt(5));
+                    b = rs.getBlob(3);
+                    arch64 = "Sin imagen";
+                    if(b!=null){
+                        byte[] datos = b.getBytes(1, (int) b.length());
+                        arch64 = new String(datos);
+                    }
+                    aux= new Tarea(rs.getInt(1), rs.getString(2), arch64, rs.getInt(4), rs.getString(5));
                     tareas.add(aux);
                     System.out.println(aux.getTitulo());
                 }

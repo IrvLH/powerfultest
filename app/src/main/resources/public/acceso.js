@@ -3,9 +3,9 @@ function accederCuenta(e) {
     var correo = document.getElementById('correoAcc').value;
     var clave = document.getElementById('contra').value;
         
-    axios.post('http://localhost:4567/accesoUsuarios', {
-        correo: correo,
-        contra: clave,
+    axios.post('https://powerfulltest-il.herokuapp.com/accesoUsuarios', {
+        correo_e: correo,
+        clave: clave,
         completed: false
     })
 

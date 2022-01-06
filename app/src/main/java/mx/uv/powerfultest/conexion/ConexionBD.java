@@ -4,7 +4,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 public class ConexionBD {
     private static Connection c = null;
-    private static String direccion = "jdbc:mysql://localhost/sisweb_tareas?user=root&password=";
+    //private static String direccion = "jdbc:mysql://localhost/sisweb_tareas?user=root&password=";
+    private static String direccion = "jdbc:mysql://db4free.net/sisweb_tareas?user=irving133&password=unacontra515";
     public static Connection conectar(){
         try {
             c = DriverManager.getConnection(direccion);

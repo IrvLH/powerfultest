@@ -5,7 +5,7 @@ function crearUsuario(e) {
     var correo = document.getElementById('correo').value;
     var clave = document.getElementById('clave').value;
         
-    axios.post('http://localhost:4567/registrarUsuario', {
+    axios.post('https://powerfulltest-il.herokuapp.com/registrarUsuario', {
         nombre: nombres,
         correo_e: correo,
         clave: clave,

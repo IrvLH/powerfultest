@@ -8,7 +8,6 @@ import mx.uv.powerfultest.dao.UsuarioDAO;
 import mx.uv.powerfultest.objeto.Tarea;
 import mx.uv.powerfultest.objeto.Usuario;
 
-import java.sql.Blob;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +18,7 @@ public class App {
     public static void main( String[] args ){
         Gson gson = new Gson();
         staticFiles.location("/");
+        port(getHerokuAssignedPort());
         init();
         get("/acceso", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
@@ -73,7 +73,6 @@ public class App {
             String nombres = us.getNombre();
             String correo = us.getCorreo_e();
             String clave = us.getClave();
-
             System.out.println(us.toString());
 
             if (UsuarioDAO.registrarUsuario(new Usuario(0, nombres, correo, clave))) {
@@ -89,15 +88,22 @@ public class App {
             int id = 0;
             String titulo = ta.getTitulo();
             String descripcion = ta.getDescripcion();
-            Blob imagen = ta.getImagen();
+            String imagen = ta.getImagen();
             int id_usuario = ta.getId_usuario();
 
-            if (TareaDAO.registrarTarea(new Tarea(id, titulo, descripcion, imagen, id_usuario))) {
+            if (TareaDAO.registrarTarea(new Tarea(id, descripcion, imagen, id_usuario, titulo))) {
                 System.out.println("Tarea registrada con exito!");
             } else {
                 System.out.println("oops! un problema");
             }
             return "listo";
         });
+    }
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+            return 4567;
     }
 }
